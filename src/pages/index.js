@@ -129,11 +129,11 @@ const links = [
 const IndexPage = () => {
   return (
     <main style={pageStyles}>
-      <title>Home Page</title>
+      <title>Home | Freevacy</title>
       <h1 style={headingStyles}>
-        Congratulations
+        <h1>FREEVACY</h1>
         <br />
-        <span style={headingAccentStyles}>— you just made a Gatsby site! </span>
+        <span style={headingAccentStyles}>— about privacy tips! Coming Soon... </span>
         <span role="img" aria-label="Party popper emojis">
           🎉🎉🎉
         </span>
