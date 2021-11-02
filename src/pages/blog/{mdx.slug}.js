@@ -5,10 +5,10 @@ import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import { graphql } from 'gatsby'
 import { Disqus } from 'gatsby-plugin-disqus';
 
-const BlogPost = ({ data }) => {
+const BlogPost = ({ location, data }) => {
   const image = getImage(data.mdx.frontmatter.hero_image)
   let disqusConfig = {
-    url: `https://freevacy.gatsbyjs.io${data.location.pathname}`,
+    url: `data.site.siteMetadata.siteURL + location.pathname`,
     identifier: data.mdx.slug,
     title: data.mdx.frontmatter.title,
   }
@@ -53,6 +53,11 @@ export const query = graphql`
         }
       }
     }
+    site{
+		siteMetadata{
+			siteUrl
+    }
+  }
   }
 `
 
