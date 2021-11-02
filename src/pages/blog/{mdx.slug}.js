@@ -9,7 +9,7 @@ const BlogPost = ({ location, data }) => {
   const image = getImage(data.mdx.frontmatter.hero_image)
   let disqusConfig = {
     url: `data.site.siteMetadata.siteURL + location.pathname`,
-    identifier: data.mdx.slug,
+    identifier: data.mdx.id,
     title: data.mdx.frontmatter.title,
   }
   return (
@@ -38,7 +38,7 @@ const BlogPost = ({ location, data }) => {
 export const query = graphql`
   query($id: String) {
     mdx(id: {eq: $id}) {
-      slug
+      id
       body
       frontmatter {
         title
