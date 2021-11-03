@@ -8,7 +8,7 @@ import { Disqus } from 'gatsby-plugin-disqus';
 const BlogPost = ({ location, data }) => {
   const image = getImage(data.mdx.frontmatter.hero_image)
   let disqusConfig = {
-    url: `data.site.siteMetadata.siteURL + location.pathname`,
+    url: data.site.siteMetadata.siteURL + location.pathname,
     identifier: data.mdx.id,
     title: data.mdx.frontmatter.title,
   }
