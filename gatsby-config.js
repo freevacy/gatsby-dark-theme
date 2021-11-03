@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    siteUrl: "https://freevacy.gatsbyjs.io",
+    siteUrl: "https://freevacy.gatsbyjs.io/",
     title: "freevacy",
   },
   plugins: [

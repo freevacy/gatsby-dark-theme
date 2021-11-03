@@ -5,10 +5,10 @@ import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import { graphql } from 'gatsby'
 import { Disqus } from 'gatsby-plugin-disqus';
 
-const BlogPost = ({ location, data }) => {
+const BlogPost = ({ data }) => {
   const image = getImage(data.mdx.frontmatter.hero_image)
   let disqusConfig = {
-    url: data.site.siteMetadata.siteURL + location.pathname,
+    url: data.site.siteMetadata.siteURL + data.mdx.slug,
     identifier: data.mdx.id,
     title: data.mdx.frontmatter.title,
   }
@@ -38,6 +38,7 @@ const BlogPost = ({ location, data }) => {
 export const query = graphql`
   query($id: String) {
     mdx(id: {eq: $id}) {
+      slug
       id
       body
       frontmatter {
@@ -54,8 +55,8 @@ export const query = graphql`
       }
     }
     site{
-		siteMetadata{
-			siteUrl
+    siteMetadata{
+      siteUrl
     }
   }
   }
