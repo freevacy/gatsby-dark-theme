@@ -3,15 +3,11 @@ import Layout from '../../components/layout'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import { graphql } from 'gatsby'
-import { Disqus } from 'gatsby-plugin-disqus';
+import Comments from '../../components/Comment'
 
 const BlogPost = ({ data }) => {
   const image = getImage(data.mdx.frontmatter.hero_image)
-  let disqusConfig = {
-    url: data.site.siteMetadata.siteURL + blog/data.mdx.slug,
-    identifier: data.mdx.id,
-    title: data.mdx.frontmatter.title,
-  }
+
   return (
     <Layout pageTitle={data.mdx.frontmatter.title}>
       <p>{data.mdx.frontmatter.date}</p>
@@ -28,9 +24,7 @@ const BlogPost = ({ data }) => {
       <MDXRenderer>
         {data.mdx.body}
       </MDXRenderer>
-      <Disqus
-        config={disqusConfig}
-    />
+      <Comments/>
     </Layout>
   )
 }
@@ -38,7 +32,6 @@ const BlogPost = ({ data }) => {
 export const query = graphql`
   query($id: String) {
     mdx(id: {eq: $id}) {
-      slug
       id
       body
       frontmatter {
@@ -54,11 +47,6 @@ export const query = graphql`
         }
       }
     }
-    site{
-    siteMetadata{
-      siteUrl
-    }
-  }
   }
 `
 
