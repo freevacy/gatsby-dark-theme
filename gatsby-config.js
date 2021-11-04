@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    siteUrl: "https://freevacy.gatsbyjs.io/",
+    siteUrl: "https://freevacy.gatsbyjs.io",
     title: "freevacy",
   },
   plugins: [
@@ -22,5 +22,6 @@ module.exports = {
         stripQueryString: true,
       },
     },
+    "gatsby-plugin-sitemap",
   ],
 };
