@@ -15,12 +15,5 @@ module.exports = {
     },
     "gatsby-plugin-mdx",
     "gatsby-transformer-sharp",
-    {
-      resolve: `gatsby-plugin-canonical-urls`,
-      options: {
-        siteUrl: `https://freevacy.gatsbyjs.io`,
-        stripQueryString: true,
-      },
-    },
   ],
 };
