@@ -1,5 +1,6 @@
 import * as React from "react"
 import { Link } from "gatsby"
+import Comments from "../components/comment"
 
 // styles
 const pageStyles = {
@@ -46,6 +47,7 @@ const NotFoundPage = () => {
         ) : null}
         <br />
         <Link to="/">Go home</Link>.
+        <Comments/>
       </p>
     </main>
   )
