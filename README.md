@@ -4,7 +4,7 @@
   </a>
 </p>
 <h1 align="center">
-  Fork from Gatsby minimal starter. Check it out after improve in <a href="freevacy.gatsbyjs.io">freevacy.gatsbyjs.io</a>
+  Fork from Gatsby minimal starter. Check it out after improve in <a href="https://freevacy.gatsbyjs.io">freevacy.gatsbyjs.io</a>
 </h1>
 
 ## 🚀 Quick start
@@ -33,4 +33,4 @@
 
 ## 🚀 Quick start (Gatsby Cloud)
 
-Deploy this with one click on [Gatsby Cloud](https://www.gatsbyjs.com/cloud/):
+Deploy this with one click on [Gatsby Cloud](https://www.gatsbyjs.com/cloud/)
