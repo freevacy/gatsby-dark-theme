@@ -31,17 +31,17 @@ const Layout = (props) => {
         <ul className={navLinks}>
           <li className={navLinkItem}>
             <Link to="/" className={navLinkText}>
-              Home
+              home
             </Link>
           </li>
           <li className={navLinkItem}>
             <Link to="/blog" className={navLinkText}>
-              Blog
+              blog
             </Link>
           </li>
           <li className={navLinkItem}>
             <Link to="/about" className={navLinkText}>
-              About
+              about
             </Link>
           </li>
         </ul>

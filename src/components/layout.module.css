@@ -1,7 +1,7 @@
 .container {
     margin: auto;
-    max-width: 750px;
-    font-family: sans-serif;
+    max-width: 700px;
+    font-family: poppins;
 }
 
 .heading {
@@ -19,6 +19,7 @@
 }
 
 .nav-link-text {
+    text-decoration: none;
     color: black;
 }
 
@@ -26,5 +27,5 @@
     font-size: 3rem;
     color: gray;
     font-weight: 700;
-    margin: 3rem 0;
+    margin: 1rem 0;
 }
