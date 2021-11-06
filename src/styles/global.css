@@ -1,0 +1,25 @@
+:root {
+    --font-serif: 'Roboto Slab';
+    --font-sans: 'Open Sans';
+    --color-background: white;
+    --color-nav: #e6e6e6;
+    --color-text: #222;
+    --color-primary: #dadada;
+    /* ... more colors */
+}
+
+/* Dark Mode */
+:root.dark {
+    --color-background: black;
+    --color-nav: #222;
+    --color-text: #ddd;
+    --color-primary: #fbfafc;
+    /* ... more colors */
+}
+
+body {
+    background: var(--color-background);
+    color: var(--color-text);
+    margin: 0;
+    font-family: var(--font-sans);
+}

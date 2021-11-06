@@ -8,6 +8,7 @@ import {
   navLinkText,
   siteTitle
 } from './layout.module.css'
+import ToggleMode from './toggler'
 
 const Layout = (props) => {
   const pageTitle = props.pageTitle
@@ -43,6 +44,9 @@ const Layout = (props) => {
             <Link to="/about" className={navLinkText}>
               about
             </Link>
+          </li>
+          <li>
+            <ToggleMode />
           </li>
         </ul>
       </nav>
