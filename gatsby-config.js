@@ -22,11 +22,7 @@ module.exports = {
     },
     },
     "gatsby-transformer-sharp",
-    {
-      resolve: "gatsby-plugin-sitemap",
-      options: {
-        output: "/sitemap.xml",
-      }
-    },
+    "gatsby-plugin-sitemap",
+    "gatsby-plugin-robots-txt",
   ],
 };
