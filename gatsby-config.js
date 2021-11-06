@@ -22,12 +22,17 @@ module.exports = {
     },
     },
     "gatsby-transformer-sharp",
-    "gatsby-plugin-sitemap",
+    {
+    resolve: `gatsby-plugin-sitemap`,
+    options: {
+      output: `/sitemap.xml`,
+      }
+    },
     {
       resolve: 'gatsby-plugin-robots-txt',
       options: {
         host: 'https://freevacy.gatsbyjs.io',
-        sitemap: 'https://freevacy.gatsbyjs.io/sitemap/sitemap-0.xml',
+        sitemap: 'https://freevacy.gatsbyjs.io/sitemap.xml',
         policy: [{ userAgent: '*', allow: '/' }]
       }
     },
