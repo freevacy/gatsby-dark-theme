@@ -23,6 +23,21 @@ module.exports = {
     },
     "gatsby-transformer-sharp",
     "gatsby-plugin-sitemap",
-    "gatsby-plugin-robots-txt",
+    {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        host: 'https://freevacy.gatsbyjs.io',
+        sitemap: 'https://freevacy.gatsbyjs.io/sitemap/sitemap-0.xml',
+        resolveEnv: () => process.env.GATSBY_ENV,
+        env: {
+          development: {
+            policy: [{ userAgent: '*', disallow: ['/'] }]
+          },
+          production: {
+            policy: [{ userAgent: '*', allow: '/' }]
+          }
+        }
+      }
+    },
   ],
 };
