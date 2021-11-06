@@ -27,6 +27,11 @@ module.exports = {
       options: {
         query: `
         {
+          site {
+          siteMetadata {
+            siteUrl
+          }
+        }
         allSitePage {
           edges {
             node {
@@ -34,29 +39,8 @@ module.exports = {
             }
           }
         }
-        allMdx {
-          nodes {
-            slug
-          }
-        }
       }
       `,
-        resolveSiteUrl: () => siteUrl,
-        resolvePages: ({
-          allSitePage: { nodes: allPages },
-          allMdxNode: { nodes: allMdxNodes },
-        }) => {
-          const MdxNodeMap = allMdxNodes.reduce((acc, node) => {
-            const { uri } = node
-            acc[uri] = node
-
-            return acc
-          }, {})
-
-          return allPages.map(page => {
-            return { ...page, ...MdxNodeMap[page.path] }
-          })
-        },
         serialize: ({ site, allSitePage }) =>
           allSitePage.edges.map(edge => {
             return {
@@ -73,7 +57,7 @@ module.exports = {
                 `/my-excluded-page`,
                 /(\/)?hash-\S*/, // you can also pass valid RegExp to exclude internal tags for example
         ],
-        output: "/sitemap.xml",
+        output: "./path/to/sitemap.xml",
       }
     },
   ],
