@@ -49,7 +49,7 @@ module.exports = {
               priority: 0.7,
             }
         }),
-        exclude: [
+        excludes: [
                 `/dev-404-page`,
                 `/404`,
                 `/404.html`,
@@ -58,7 +58,6 @@ module.exports = {
                 /(\/)?hash-\S*/, // you can also pass valid RegExp to exclude internal tags for example
         ],
         output: "/sitemap.xml",
-        title: "Freevacy's Sitemap",
       }
     },
   ],
