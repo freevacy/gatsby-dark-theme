@@ -1,6 +1,11 @@
 import React, { useState, useEffect } from 'react'
-import moon from '../images/moon.png'
-import sun from '../images/sun.png'
+import { Link } from 'gatsby';
+import {
+  navLinks,
+  navLinkItem,
+  navLinkText,
+  button,
+} from './layout.module.css'
 
 const ToggleMode = () => {
   let websiteTheme;
@@ -19,13 +24,42 @@ const ToggleMode = () => {
   };
 
   return (
-    <button onClick={ThemeToggle}>
-      {theme === 'dark' ? (
-        <img src={sun} alt="Light mode" />
-      ) : (
-        <img src={moon} alt="Dark mode" />
-      )}
-    </button>
+    <div>
+      <nav>
+        <ul className={navLinks}>
+          <li className={navLinkItem}>
+            <button className={button}>
+                <Link to="/" className={navLinkText}>
+                home
+                </Link>
+            </button>
+          </li>
+          <li className={navLinkItem}>
+            <button className={button}>
+                <Link to="/blog" className={navLinkText}>
+                blog
+                </Link>
+            </button>
+          </li>
+          <li className={navLinkItem}>
+            <button className={button}>
+                <Link to="/about" className={navLinkText}>
+                about
+                </Link>
+            </button>
+          </li>
+          <li  className={navLinkItem}>
+            <button className={button} onClick={ThemeToggle}>
+                {theme === 'dark' ? (
+                    <Link className={navLinkText}>light</Link>
+                ) : (
+                    <Link className={navLinkText}>dark</Link>
+                )}
+            </button>
+          </li>
+        </ul>
+      </nav>
+    </div>
   );
 };
 
