@@ -27,20 +27,36 @@ module.exports = {
       options: {
         query: `
         {
-          site {
-            siteMetadata {
-              siteUrl
-            }
-          }
-          allSitePage {
-            edges {
-              node {
-                path
-              }
+        allSitePage {
+          edges {
+            node {
+              path
             }
           }
         }
+        allMdx {
+          nodes {
+            slug
+          }
+        }
+      }
       `,
+        resolveSiteUrl: () => siteUrl,
+        resolvePages: ({
+          allSitePage: { nodes: allPages },
+          allMdxNode: { nodes: allMdxNodes },
+        }) => {
+          const MdxNodeMap = allMdxNodes.reduce((acc, node) => {
+            const { uri } = node
+            acc[uri] = node
+
+            return acc
+          }, {})
+
+          return allPages.map(page => {
+            return { ...page, ...MdxNodeMap[page.path] }
+          })
+        },
         serialize: ({ site, allSitePage }) =>
           allSitePage.edges.map(edge => {
             return {
