@@ -25,38 +25,6 @@ module.exports = {
     {
       resolve: "gatsby-plugin-sitemap",
       options: {
-        query: `
-        {
-          site {
-          siteMetadata {
-            siteUrl
-          }
-        }
-        allSitePage {
-          edges {
-            node {
-              path
-            }
-          }
-        }
-      }
-      `,
-        serialize: ({ site, allSitePage }) =>
-          allSitePage.edges.map(edge => {
-            return {
-              url: site.siteMetadata.siteUrl + edge.node.path,
-              changefreq: `daily`,
-              priority: 0.7,
-            }
-        }),
-        excludes: [
-                `/dev-404-page`,
-                `/404`,
-                `/404.html`,
-                `/offline-plugin-app-shell-fallback`,
-                `/my-excluded-page`,
-                /(\/)?hash-\S*/, // you can also pass valid RegExp to exclude internal tags for example
-        ],
         output: "/sitemap.xml",
       }
     },
