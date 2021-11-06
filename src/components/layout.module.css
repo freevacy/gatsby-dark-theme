@@ -19,7 +19,7 @@
 }
 
 .nav-link-text {
-    color: black;
+    color: var(--color-text);
     text-decoration: none;
 }
 
@@ -28,4 +28,14 @@
     color: gray;
     font-weight: 700;
     margin: 0.5rem 0;
+}
+
+.button {
+    font-size: 15px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    background-color: var(--color-background);
+    border: none;
 }

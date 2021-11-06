@@ -1,11 +1,8 @@
 import * as React from 'react'
-import { Link, useStaticQuery, graphql } from 'gatsby'
+import { useStaticQuery, graphql } from 'gatsby'
 import {
   container,
   heading,
-  navLinks,
-  navLinkItem,
-  navLinkText,
   siteTitle
 } from './layout.module.css'
 import ToggleMode from './toggler'
@@ -28,28 +25,7 @@ const Layout = (props) => {
     <div className={container}>
       <title>{pageTitle} | {data.site.siteMetadata.title}</title>
       <header className={siteTitle}>{data.site.siteMetadata.title}</header>
-      <nav>
-        <ul className={navLinks}>
-          <li className={navLinkItem}>
-            <Link to="/" className={navLinkText}>
-              home
-            </Link>
-          </li>
-          <li className={navLinkItem}>
-            <Link to="/blog" className={navLinkText}>
-              blog
-            </Link>
-          </li>
-          <li className={navLinkItem}>
-            <Link to="/about" className={navLinkText}>
-              about
-            </Link>
-          </li>
-          <li>
-            <ToggleMode />
-          </li>
-        </ul>
-      </nav>
+      <ToggleMode />
       <main>
         <h1 className={heading}>{pageTitle}</h1>
         {children}
