@@ -1,7 +1,9 @@
 module.exports = {
   siteMetadata: {
-    siteUrl: "https://freevacy.gatsbyjs.io",
     title: "freevacy",
+    author: "Heri Setiawan",
+    description: "Freevacy | Tips menjaga privacy mu didunia maya.",
+    siteUrl: "https://freevacy.gatsbyjs.io",
   },
   plugins: [
     "gatsby-plugin-image",
@@ -13,15 +15,18 @@ module.exports = {
         path: `${__dirname}/assets/blog`,
       }
     },
-    "gatsby-plugin-mdx",
+    {
+    resolve: `gatsby-plugin-mdx`,
+    options: {
+      extensions: [`.md`, `.mdx`],
+    },
+    },
     "gatsby-transformer-sharp",
     {
-      resolve: `gatsby-plugin-canonical-urls`,
+      resolve: "gatsby-plugin-sitemap",
       options: {
-        siteUrl: `https://freevacy.gatsbyjs.io`,
-        stripQueryString: true,
-      },
+        output: "/sitemap.xml",
+      }
     },
-    "gatsby-plugin-sitemap",
   ],
 };
