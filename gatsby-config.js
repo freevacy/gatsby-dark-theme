@@ -28,15 +28,7 @@ module.exports = {
       options: {
         host: 'https://freevacy.gatsbyjs.io',
         sitemap: 'https://freevacy.gatsbyjs.io/sitemap/sitemap-0.xml',
-        resolveEnv: () => process.env.GATSBY_ENV,
-        env: {
-          development: {
-            policy: [{ userAgent: '*', disallow: ['/'] }]
-          },
-          production: {
-            policy: [{ userAgent: '*', allow: '/' }]
-          }
-        }
+        policy: [{ userAgent: '*', allow: '/' }]
       }
     },
   ],
