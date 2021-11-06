@@ -57,7 +57,7 @@ module.exports = {
                 `/my-excluded-page`,
                 /(\/)?hash-\S*/, // you can also pass valid RegExp to exclude internal tags for example
         ],
-        output: "./path/to/sitemap.xml",
+        output: "/sitemap.xml",
       }
     },
   ],
