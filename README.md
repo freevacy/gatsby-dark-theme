@@ -4,7 +4,7 @@
   </a>
 </p>
 <h1 align="center">
-  Gatsby minimal starter
+  Freevacy fork from Gatsby minimal starter
 </h1>
 
 ## 🚀 Quick start
@@ -30,8 +30,6 @@
 3.  **Open the code and start customizing!**
 
     Your site is now running at http://localhost:8000!
-
-    Edit `src/pages/index.js` to see your site update in real-time!
 
 ## 🚀 Quick start (Gatsby Cloud)
 
