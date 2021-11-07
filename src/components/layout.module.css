@@ -1,6 +1,6 @@
 .container {
     margin: auto;
-    max-width: 650px;
+    max-width: 600px;
     font-family: poppins;
 }
 
@@ -31,11 +31,16 @@
 }
 
 .button {
-    font-size: 15px;
+    font-size: 20px;
     cursor: pointer;
     text-align: center;
     text-decoration: none;
     outline: none;
     background-color: var(--color-background);
     border: none;
+}
+
+img {
+    width: 20px;
+    height: 20px;
 }
