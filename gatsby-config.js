@@ -40,5 +40,12 @@ module.exports = {
         policy: [{ userAgent: '*', allow: '/' }]
       }
     },
+    {
+    resolve: `gatsby-plugin-scroll-indicator`,
+    options: {
+      // Configure color of the scroll indicator
+      color: "var(--color-text)",
+    },
+  },
   ],
 };
