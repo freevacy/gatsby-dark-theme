@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from 'gatsby';
+import sun from '../images/sun.png'
+import moon from '../images/moon.png'
 import {
   navLinks,
   navLinkItem,
@@ -30,30 +32,30 @@ const ToggleMode = () => {
           <li className={navLinkItem}>
             <button className={button}>
                 <Link to="/" className={navLinkText}>
-                home
+                Home
                 </Link>
             </button>
           </li>
           <li className={navLinkItem}>
             <button className={button}>
                 <Link to="/blog" className={navLinkText}>
-                blog
+                Blog
                 </Link>
             </button>
           </li>
           <li className={navLinkItem}>
             <button className={button}>
                 <Link to="/about" className={navLinkText}>
-                about
+                About
                 </Link>
             </button>
           </li>
           <li  className={navLinkItem}>
             <button className={button} onClick={ThemeToggle}>
                 {theme === 'dark' ? (
-                    <Link className={navLinkText}>light</Link>
+                    <img alt="sun dark-mode" src={sun}/>
                 ) : (
-                    <Link className={navLinkText}>dark</Link>
+                    <img alt="moon dark-mode" src={moon}/>
                 )}
             </button>
           </li>
